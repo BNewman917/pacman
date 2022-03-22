@@ -5,6 +5,8 @@ This is the Pacman Exercise for Week 7 of MIT xPRO coding bootcamp.
 
 <h3>Description</h3>
 Animation of the classic video game character bouncing his way across the screen. 
+
+<h3>How to Run</h3>
 <ol>
   <li>Use 'Add PacMan' button to generate new PacMen on screen.</li>
   <li>Click 'Start Game' to get them all moving.</li>
