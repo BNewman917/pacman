@@ -4,7 +4,12 @@
 This is the Pacman Exercise for Week 7 of MIT xPRO coding bootcamp.
 
 <h3>Description</h3>
-Animation of the classic video game character chomping his way back and forth across the screen.
+Animation of the classic video game character bouncing his way across the screen. 
+<ol>
+  <li>Use 'Add PacMan' button to generate new PacMen on screen.</li>
+  <li>Click 'Start Game' to get them all moving.</li>
+  <li>Use 'Pause' and 'Unpause' to start and stop PacMen movement.</li>
+</ol>
 
 <h3>Future Plans</h3>
 I plan to create a dedicated game board rather than using the size of the window, add keyboard direction control,
