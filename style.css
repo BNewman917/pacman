@@ -1,4 +1,4 @@
-#container{
+body {
   background-color: #3b5a68;
 }
 
@@ -6,4 +6,7 @@
     width: 200;
     height: 30;
     z-Index: 3;
+    display: flex;
+    justify-content: flex-start;
+    width: auto;
 }
