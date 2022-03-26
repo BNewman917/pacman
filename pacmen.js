@@ -1,10 +1,13 @@
-var pos = 0;
+// This array holds all the pacmen
 const pacArray = [
   ["./images/PacMan1.png", "./images/PacMan2.png"],
   ["./images/PacMan3.png", "./images/PacMan4.png"],
 ];
+const pacMen = [];
+const btn = document.querySelector("button.start");
 var direction = 0;
-const pacMen = []; // This array holds all the pacmen
+var pos = 0;
+var motion = null;
 
 function setToRandom(scale) {
   return {
@@ -31,11 +34,12 @@ function makePac() {
   return { position, velocity, newimg };
 }
 
-function timeout() {
-  setTimeout(update, 20);
-}
+// function timeout() {
+//   setTimeout(update, 20);
+// }
 
 function update() {
+  btn.disabled = true;
   //loop over pacmen array and move each one and move image in DOM
   pacMen.forEach((item) => {
     checkCollisions(item);
@@ -45,7 +49,7 @@ function update() {
     item.newimg.style.left = item.position.x;
     item.newimg.style.top = item.position.y;
   });
-  timeout();
+  motion = setTimeout(update, 20);
 }
 
 function checkCollisions(item) {
@@ -67,16 +71,7 @@ function makeOne() {
 }
 
 function stop() {
-  pacMen.forEach((item) => {
-    item.velocity.x = 0;
-    item.velocity.y = 0;
-    clearTimeout(timeout);
-  });
-}
-function restart() {
-  pacMen.forEach((item) => {
-    item.velocity = setToRandom(10);
-    clearTimeout(timeout);
-    update();
-  });
+  clearInterval(motion);
+  motion = null;
+  btn.disabled = false;
 }
