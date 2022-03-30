@@ -29,13 +29,17 @@ function makePac() {
   newimg.width = 100;
   newimg.style.left = position.x;
   newimg.style.top = position.y;
-  newimg.style.zIndex = "0";
+  newimg.style.zIndex = -1;
   newimg.direction = 0;
   newimg.chomp = 0;
   newimg.src = pacArray[newimg.direction][newimg.chomp];
   game.appendChild(newimg);
   // return details in an object
   return { position, velocity, newimg };
+}
+
+function makeOne() {
+  pacMen.push(makePac()); // add a new PacMan
 }
 
 function update() {
@@ -56,11 +60,6 @@ function update() {
   intervals.push(motion);
 }
 
-function hyperSpeed() {
-  motion = setInterval(update, 75);
-  intervals.push(motion);
-}
-
 function checkCollisions(item) {
   if (
     item.position.x + item.velocity.x + item.newimg.width > window.innerWidth ||
@@ -77,13 +76,21 @@ function checkCollisions(item) {
     item.velocity.y = -item.velocity.y;
 }
 
-function makeOne() {
-  pacMen.push(makePac()); // add a new PacMan
+function hyperSpeed() {
+  motion = setInterval(update, 75);
+  intervals.push(motion);
 }
 
 function stop() {
-for (var i = 0; i < intervals.length; i++) {
-  clearInterval(intervals[i]);
-}
+  for (var i = 0; i < intervals.length; i++) {
+    clearInterval(intervals[i]);
+  }
   btn.disabled = false;
+}
+
+function reset() {
+  for (var j = 0; j < pacMen.length; j++) {
+    pacMen[j].newimg.remove();
+  }
+  stop();
 }
