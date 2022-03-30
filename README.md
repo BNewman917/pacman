@@ -15,6 +15,7 @@ Animation of the classic video game character bouncing his way across the screen
 </ol>
 
 <h3>Future Plans</h3>
+
 - Dedicated game board
 - Keyboard direction control
 - Objects with collision detection for PacMen to chomp
