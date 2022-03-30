@@ -15,8 +15,9 @@ Animation of the classic video game character bouncing his way across the screen
 </ol>
 
 <h3>Future Plans</h3>
-I plan to create a dedicated game board rather than using the size of the window, add keyboard direction control,
-and objects with collision detection more in line with the classic game. I will also add a single button to clear the page and start over.
+- Dedicated game board
+- Keyboard direction control
+- Objects with collision detection for PacMen to chomp
 
 <h3>Notes</h3>
 
