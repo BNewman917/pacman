@@ -4,6 +4,7 @@ const pacArray = [
   ["./images/PacMan3.png", "./images/PacMan4.png"],
 ];
 const pacMen = [];
+
 const btn = document.querySelector("button.start");
 var direction = 0;
 var pos = 0;
@@ -24,11 +25,13 @@ function makePac() {
   let velocity = setToRandom(10);
   let position = setToRandom(200);
   newimg.style.position = "absolute";
-  newimg.src = "./images/PacMan1.png";
   newimg.width = 100;
   newimg.style.left = position.x;
   newimg.style.top = position.y;
-  newimg.style.zIndex = "-1";
+  newimg.style.zIndex = "0";
+  newimg.direction = 0;
+  newimg.chomp = 0;
+  newimg.src = pacArray[newimg.direction][newimg.chomp];
   game.appendChild(newimg);
   // return details in an object
   return { position, velocity, newimg };
@@ -48,16 +51,21 @@ function update() {
 
     item.newimg.style.left = item.position.x;
     item.newimg.style.top = item.position.y;
+
+    item.newimg.src = pacArray[item.newimg.direction][item.newimg.chomp];
+    item.newimg.chomp = (item.newimg.chomp + 1) % 2;
   });
-  motion = setTimeout(update, 20);
+  motion = setTimeout(update, 75);
 }
 
 function checkCollisions(item) {
   if (
     item.position.x + item.velocity.x + item.newimg.width > window.innerWidth ||
     item.position.x + item.velocity.x < 0
-  )
+  ) {
     item.velocity.x = -item.velocity.x;
+    item.newimg.direction = (item.newimg.direction + 1) % 2;
+  }
   if (
     item.position.y + item.velocity.y + item.newimg.height >
       window.innerHeight ||
