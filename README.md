@@ -11,11 +11,12 @@ Animation of the classic video game character bouncing his way across the screen
   <li>Use 'Add PacMan' button to generate new PacMen on screen.</li>
   <li>Click 'Start Game' to get them all moving.</li>
   <li>Use 'Pause' and 'Unpause' to start and stop PacMen movement.</li>
+  <li>'Gotta Go Fast!' will accelerate PacMen on each click. Reset with 'Pause'.</li>
 </ol>
 
 <h3>Future Plans</h3>
 I plan to create a dedicated game board rather than using the size of the window, add keyboard direction control,
-and objects with collision detection more in line with the classic game. I will also add restrictions to keep PacMen from accelerating exponentially, and a single button to clear the page and start over.
+and objects with collision detection more in line with the classic game. I will also add a single button to clear the page and start over.
 
 <h3>Notes</h3>
 
