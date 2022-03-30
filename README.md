@@ -20,7 +20,7 @@ and objects with collision detection more in line with the classic game. I will 
 <h3>Notes</h3>
 Much of this code was provided as part of the assignment.
 
-Copyright (c) 2020 John Williams
+Copyright (c) 2020 Brent Newman
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -39,4 +39,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
