@@ -4,6 +4,7 @@ const pacArray = [
   ["./images/PacMan3.png", "./images/PacMan4.png"],
 ];
 const pacMen = [];
+const intervals = [];
 
 const btn = document.querySelector("button.start");
 var direction = 0;
@@ -37,10 +38,6 @@ function makePac() {
   return { position, velocity, newimg };
 }
 
-// function timeout() {
-//   setTimeout(update, 20);
-// }
-
 function update() {
   btn.disabled = true;
   //loop over pacmen array and move each one and move image in DOM
@@ -56,6 +53,12 @@ function update() {
     item.newimg.chomp = (item.newimg.chomp + 1) % 2;
   });
   motion = setTimeout(update, 75);
+  intervals.push(motion);
+}
+
+function hyperSpeed() {
+  motion = setInterval(update, 75);
+  intervals.push(motion);
 }
 
 function checkCollisions(item) {
@@ -79,7 +82,8 @@ function makeOne() {
 }
 
 function stop() {
-  clearInterval(motion);
-  motion = null;
+for (var i = 0; i < intervals.length; i++) {
+  clearInterval(intervals[i]);
+}
   btn.disabled = false;
 }
